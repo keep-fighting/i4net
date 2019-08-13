@@ -27,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '127.0.0.1',  # 本地开发环境
     'i4net.com.cn',  # 线上部署正式环境
+    'www.i4net.com.cn',  # 线上部署正式环境
 ]
 
 # Application definition
