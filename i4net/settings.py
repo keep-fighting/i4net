@@ -24,7 +24,10 @@ SECRET_KEY = 'o@kx+cx!1l-6#!9kj_(&v!9*38pl%zd0jnlg=cb4vny9^dj9y^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '127.0.0.1',  # 本地开发环境
+    'i4net.com.cn',  # 线上部署正式环境
+]
 
 # Application definition
 
