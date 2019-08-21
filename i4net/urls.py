@@ -18,6 +18,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 文章管理
+    # 新增代码，配置app的url
     path('article/', include('article.urls', namespace='article')),
+
 ]
