@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o@kx+cx!1l-6#!9kj_(&v!9*38pl%zd0jnlg=cb4vny9^dj9y^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',  # 本地开发环境
@@ -122,6 +122,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/')
 ]
+STATIC_ROOT = 'static_root'
 
 # 媒体文件地址
 MEDIA_URL = '/media/'
