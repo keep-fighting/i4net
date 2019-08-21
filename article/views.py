@@ -1,3 +1,4 @@
+import markdown
 from django.views import generic
 from .models import ArticlePost
 
@@ -14,3 +15,15 @@ class ArticleDetailView(generic.DetailView):
     template_name = 'article/detail.html'
     model = ArticlePost
     context_object_name = 'article'
+
+    def get_object(self, queryset=None):
+        article = super().get_object()
+        article.body = markdown.markdown(
+            article.body,
+            extensions=[
+                # 包含 缩写、表格等常用扩展
+                'markdown.extensions.extra',
+                # 语法高亮扩展
+                'markdown.extensions.codehilite',
+            ])
+        return article
