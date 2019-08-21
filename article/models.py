@@ -12,6 +12,8 @@ class ArticlePost(models.Model):
 
     class Meta:
         ordering = ('-created',)
+        verbose_name = '文章'
+        verbose_name_plural = '文章'
 
     def __str__(self):
         return self.title

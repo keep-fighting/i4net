@@ -1,7 +1,10 @@
 from django.urls import path
+from . import views
 
 # 正在部署的应用的名称
 app_name = 'article'
 urlpatterns = [
-    # 目前还没有urls
+    # path函数将url映射到视图
+    path('article-list/', views.ArticleListView.as_view(), name='article_list'),
+
 ]

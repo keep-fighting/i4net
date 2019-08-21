@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from article import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 新增代码，配置app的url
+    # 文章管理
+    path('', views.ArticleListView.as_view(), name='index'),
     path('article/', include('article.urls', namespace='article')),
 
 ]
