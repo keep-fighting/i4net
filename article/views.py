@@ -5,16 +5,13 @@ from .models import ArticlePost
 
 # 文章列表
 class ArticleListView(generic.ListView):
-    template_name = 'article/list.html'
     model = ArticlePost
-    context_object_name = 'articles'
+    paginate_by = 20
 
 
 # 文章详情
 class ArticleDetailView(generic.DetailView):
-    template_name = 'article/detail.html'
     model = ArticlePost
-    context_object_name = 'article'
 
     def get_object(self, queryset=None):
         article = super().get_object()

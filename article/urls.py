@@ -8,4 +8,5 @@ urlpatterns = [
     path('article-list/', views.ArticleListView.as_view(), name='article_list'),
     # 文章详情页视图
     path('article-detail/<int:pk>', views.ArticleDetailView.as_view(), name='article_detail'),
+
 ]
