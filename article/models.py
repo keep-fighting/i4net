@@ -7,6 +7,7 @@ class ArticlePost(models.Model):
     author = models.ForeignKey(User, verbose_name='文章作者', on_delete=models.CASCADE)
     title = models.CharField(verbose_name='文章标题', max_length=100)
     body = models.TextField(verbose_name='文章正文')
+    total_views = models.PositiveIntegerField(default=0)
     created = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     updated = models.DateTimeField(verbose_name='文章更新时间', auto_now=True)
 
