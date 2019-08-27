@@ -2,6 +2,7 @@ import markdown
 from django.views import generic
 from .models import ArticlePost
 from django.db.models import Q
+from comment.models import Comment
 
 
 # 文章列表
@@ -47,4 +48,5 @@ class ArticleDetailView(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data()
         context['toc'] = self.md.toc
+        context['comments'] = Comment.objects.filter(article=self.object)
         return context

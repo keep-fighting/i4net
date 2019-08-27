@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse_lazy
 
 
 # 博客文章数据模型
@@ -18,3 +19,6 @@ class ArticlePost(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse_lazy('article:article_detail', args=[self.id])
