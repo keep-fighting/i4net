@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 自定义模块
     'article',
+    'comment',
 ]
 
 MIDDLEWARE = [

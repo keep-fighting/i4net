@@ -9,8 +9,6 @@ class ArticleListView(generic.ListView):
     paginate_by = 20
 
     def get_queryset(self):
-        print(self.request.GET)
-        print(self.context_object_name)
         search = self.request.GET.get('search')
         order = self.request.GET.get('order')
         object_list = ArticlePost.objects.all()

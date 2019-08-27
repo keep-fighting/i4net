@@ -19,8 +19,10 @@ from article import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # 文章管理
+    # 文章
     path('', views.ArticleListView.as_view(), name='index'),
     path('article/', include('article.urls', namespace='article')),
+    # 评论
+    path('comment/', include('comment.urls', namespace='comment')),
 
 ]
