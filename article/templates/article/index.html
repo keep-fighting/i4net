@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block main_content %}
+    <div class="col-lg-9 p-2">
+        <!--普通文章显示-->
+        {% for article in article_list %}
+            <div class="my-card card mb-3">
+                <div class="card-body">
+                    <!-- 文章标题 -->
+                    <h1 class="mt-0 fs-16">
+                        <a href="{% url 'article:detail' article.id %}" target="_blank">
+                            <b>{{ article.get_full_title }}</b>
+                        </a>
+                    </h1>
+                    <!-- 文章摘要 -->
+                    <span class="fs-14">{{ article.digest }}</span>
+                </div>
+                <div class="card-footer text-muted">
+                    <div class="fs-12">
+                        <span><i class="my-fa fa fa-book" aria-hidden="true"></i>&nbsp;《{{ article.column }}》</span>
+                        <span>
+                            <i class="my-fa fa fa-calendar ml-2" aria-hidden="true"></i>&nbsp;{{ article.updated|date }}
+                        </span>
+                        <a class="float-right d-none d-lg-block" href="{% url 'article:detail' article.id %}"
+                           target="_blank">
+                            <b class="text-danger">开始阅读→</b>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        <span class="text-danger pl-1"> 即将呈现......</span>
+        <div class="my-card card mb-3 disabled">
+            <div class="card-body">
+                <!-- 文章标题 -->
+                <h1 class="mt-0 fs-16">
+                    <a href="#" onclick="alert('功能尚未呈现，敬请期待');">
+                        <b>Django搭建个人网站 - 数据模型Model</b>
+                    </a>
+                </h1>
+                <!-- 文章摘要 -->
+                <span class="fs-14">Django为大家提供了强大数据模型model，并提供了强大ORM支持。用起来，你一定为爱上她的。</span>
+            </div>
+            <div class="card-footer text-muted">
+                <div class="fs-12">
+                    <span><i class="my-fa fa fa-book" aria-hidden="true"></i>&nbsp;《Django搭建个人网站》</span>
+                    <span>
+                        <i class="my-fa fa fa-calendar ml-2" aria-hidden="true"></i>&nbsp;即将呈现......
+                    </span>
+                    <a class="float-right d-none d-lg-block" href="#" onclick="alert('功能尚未呈现，敬请期待');">
+                        <b class="text-danger">开始阅读→</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

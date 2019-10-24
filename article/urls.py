@@ -5,8 +5,7 @@ from . import views
 app_name = 'article'
 urlpatterns = [
     # 文章列表页视图
-    path('article-list/', views.ArticleListView.as_view(), name='article_list'),
-    # 文章详情页视图
-    path('article-detail/<int:pk>', views.ArticleDetailView.as_view(), name='article_detail'),
-
+    path('', views.ArticleListView.as_view(), name='index'),
+    path('list/', views.ArticleListView.as_view(), name='list'),
+    path('<int:pk>/', views.ArticleDetailView.as_view(), name='detail'),
 ]

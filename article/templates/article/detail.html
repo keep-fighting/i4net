@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block wrapper %}
+    <div class="container bg-white p-4">
+        <h1>{{ articlepost.get_full_title }}</h1>
+        <div class="fs-12">
+            <a href="#">
+                <i class="my-fa fa fa-book" aria-hidden="true"></i>&nbsp;《{{ articlepost.column }}》
+            </a>
+            <a href="#">
+                <i class="my-fa fa fa-calendar ml-2" aria-hidden="true"></i>&nbsp;{{ articlepost.updated|date }}
+            </a>
+        </div>
+        <hr/>
+        {{ articlepost.content|safe }}
+    </div>
+{% endblock %}
