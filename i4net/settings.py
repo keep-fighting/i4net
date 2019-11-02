@@ -141,22 +141,24 @@ CKEDITOR_CONFIGS = {
         # 工具栏风格
         'toolbar': 'Custom',
         # 工具栏按钮
-        'toolbar_Custom': [
-            # 表情 代码块
-            ['Smiley', 'CodeSnippet', 'SpecialChar'],
-            # 字体风格
-            ['Bold', 'Italic', 'Underline', 'Strike'],
-            # 字体颜色
-            ['TextColor', 'BGColor'],
-            # 链接
-            ['Link', 'Unlink', 'Anchor'],
-            # 图片动画
-            ['Image', 'Flash', 'Table', 'HorizontalRule'],
-            # 列表
-            ['NumberedList', 'BulletedList'],
-            # 最大化
-            ['Maximize']
-        ],
+        # 'toolbar_Custom': [
+        #     # 样式
+        #     ['Styles', 'Format'],
+        #     # 表情 代码块
+        #     ['Smiley', 'CodeSnippet', 'SpecialChar'],
+        #     # 字体风格
+        #     ['Bold', 'Italic', 'Underline', 'Strike'],
+        #     # 字体颜色
+        #     ['TextColor', 'BGColor'],
+        #     # 链接
+        #     ['Link', 'Unlink', 'Anchor'],
+        #     # 图片动画
+        #     ['Image', 'Flash', 'Table', 'HorizontalRule'],
+        #     # 列表
+        #     ['NumberedList', 'BulletedList'],
+        #     # 最大化
+        #     ['Maximize']
+        # ],
         # 加入代码块插件
         'extraPlugins': ','.join(['codesnippet', 'prism', 'widget', 'lineutils']),
     }

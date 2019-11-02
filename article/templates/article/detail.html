@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% block wrapper %}
-    <div class="container bg-white p-4">
+{% block main_content %}
+    <div class="container bg-white p-4" style="border-radius: 5px;">
         <h1>{{ articlepost.get_full_title }}</h1>
         <div class="fs-12">
             <a href="#">
@@ -13,5 +13,24 @@
         </div>
         <hr/>
         {{ articlepost.content|safe }}
+    </div>
+{% endblock %}
+
+{% block content_right %}
+    <div class="card mb-3">
+        <div class="card-header p-2 fs-14">
+            文章目录
+        </div>
+        <div class="card-body p-1 fs-13">
+            <ul class="list-group list-group-flush">
+                {% for item in article_list %}
+                    <li class="list-group-item {% if item == object %}disabled{% endif %}">
+                        <a href="{% url 'article:detail' item.id %}">
+                            {{ item.get_full_title }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 {% endblock %}

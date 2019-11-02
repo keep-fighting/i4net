@@ -1,6 +1,6 @@
-<div class="col-lg-3 d-none d-lg-block p-2">
+<div>
     <div class="card mb-3">
-        <div class="card-header p-2 fs-15">
+        <div class="card-header p-2 fs-14">
             每日一句
         </div>
         <div class="card-body p-2 fs-13">
@@ -8,28 +8,20 @@
         </div>
     </div>
     <div class="card mb-3">
-        <div class="card-header p-2 fs-15">
-            站长动态
-        </div>
-        <div class="card-body p-2 fs-13">
-            <span>本站为大家带来的第一个项目为Django创建个人网站。小虾会坚持更新。敬请期待~~</span>
-            <br/>
-            <span class="pull-right">2019-10-24</span>
-        </div>
-    </div>
-    <div class="card mb-3">
-        <div class="card-header p-2 fs-15">
+        <div class="card-header p-2 fs-14">
             文章分类
         </div>
         <div class="card-body p-1 fs-13">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <a href="{% url 'article:index' %}" data-toggle="tooltip" data-placement="bottom" title=""
-                       target="_blank" data-original-title="Django搭建个人网站">
-                        Django搭建个人网站
-                        <span class="badge badge-warning float-right mt-1">2</span>
-                    </a>
-                </li>
+                {% for item in article_columns %}
+                    <li class="list-group-item">
+                        <a href="{% url 'article:index' %}" data-toggle="tooltip" data-placement="bottom" title=""
+                           target="_blank" data-original-title="{{ item.title }}">
+                            {{ item.title }}
+                            <span class="badge badge-warning float-right mt-1">{{ item.get_article_list.count }}</span>
+                        </a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

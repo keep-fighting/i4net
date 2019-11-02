@@ -39,16 +39,19 @@
 
 <!--主体内容-->
 {% block wrapper %}
-    <div class="container" style="height: auto !important;">
+    <div class="container mt-3" style="height: auto !important;">
         <div class="row" style="height: auto !important;">
             <!-- Left -->
-            {% block main_content %}
-                {% include '__main_content.html' %}
-            {% endblock %}
+            <div class="col-lg-9">
+                {% block main_content %}
+                {% endblock %}
+            </div>
             <!-- Right -->
-            {% block content_right %}
-                {% include '__right_content.html' %}
-            {% endblock %}
+            <div class="col-lg-3 d-none d-lg-block">
+                {% block content_right %}
+                    {% include '__right_content.html' %}
+                {% endblock %}
+            </div>
         </div>
     </div>
 {% endblock %}
@@ -67,5 +70,7 @@
 <script src="{% static 'popper/1.15.0/popper.js' %}"></script>
 <script src="{% static 'bootstrap/4.3.1/js/bootstrap.js' %}"></script>
 <script src="{% static 'ckeditor/ckeditor/plugins/prism/lib/prism/prism_patched.min.js' %}"></script>
+{% block script %}
+{% endblock %}
 </body>
 </html>
